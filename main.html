@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>百词斩•小班公告</title>
+        <title>一剑斩词震五岳</title>
         <style>
             /*we'll fill this next.*/
         </style>
@@ -18,7 +18,8 @@
             function renderClass(id) {
                 var classData = data[id-1];
                 if(!classData){
-                    $("body").append(`<h1>班级不存在</h1><p>有没有可能班级还没创建呢？</p><a href="./index.html?id=1">前往一班<a><br><a href="./index.html?id=2">前往二班<a>`);
+                    $("title").append(` - 小班不存在`);
+                    $("body").append(`<h1>小班不存在</h1><p>有没有可能根本没有这个小班呢？</p>`);
                     return;
                 }
 
@@ -46,7 +47,8 @@
                     }
                     kickedStr += kicked[i];
                 }
-                $("body").append(`<h1>一剑斩词震五岳•${id}班</h1><p>${universalContent}</p><div id="warning"><p>警告栏：<br>${warningStr}</p></div><div id="kicking"><br><div id="kicking"><p>弹射栏：<br>${kickingStr}</p></div><div id="kicked"><p>弹射记录：<br>${kickedStr}</p></div><a href="./index.html?id=1">前往一班<a><br><a href="./index.html?id=2">前往二班<a>`);
+                $("title").append(` - ${id}班公告`);
+                $("body").append(`<h1>一剑斩词震五岳•${id}班</h1><p>${universalContent}</p><div id="warning"><p>警告栏：<br>${warningStr}</p></div><div id="kicking"><br><div id="kicking"><p>弹射栏：<br>${kickingStr}</p></div><div id="kicked"><p>弹射记录：<br>${kickedStr}</p></div><button onclick="window.location.href='index.html'">切换班级</button>`);
             }
 
             window.addEventListener('DOMContentLoaded', function() {
