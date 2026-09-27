@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>百词斩•小班公告</title>
+        <style>
+            /*we'll fill this next.*/
+        </style>
+    </head>
+    <body>
+        <script src="./data.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script>
+            function getUrlParam(name) {
+                var match = location.search.match(new RegExp('[?&]' + name + '=([^&]+)'));
+                return match ? decodeURIComponent(match[1]) : null;
+            }
+
+            function renderClass(id) {
+                var classData = data[id-1];
+                if(!classData){
+                    window.location.href="./404.html";
+                    return;
+                }
+
+                var warning = classData.warning;
+                var kicking = classData.kicking;
+                var kicked = classData.kicked;
+                var warningStr = "";
+                var kickingStr = "";
+                var kickedStr = "";
+                for(var i=0;i<warning.length;i++){
+                    if(i!=0){
+                        warningStr += "<br>"
+                    }
+                    warningStr += warning[i];
+                }
+                for(var i=0;i<kicking.length;i++){
+                    if(i!=0){
+                        kickingStr += "<br>"
+                    }
+                    kickingStr += kicking[i];
+                }
+                for(var i=0;i<kicked.length;i++){
+                    if(i!=0){
+                        kickedStr += "<br>"
+                    }
+                    kickedStr += kicked[i];
+                }
+                $("body").append(`<h1>一剑斩词震五岳•${id}班</h1><p>${universalContent}</p><div id="warning"><p>警告栏：<br>${warningStr}</p></div><div id="kicking"><br><div id="kicking"><p>弹射栏：<br>${kickingStr}</p></div><div id="kicked"><p>弹射记录：<br>${kickedStr}</p></div><a href="./index.html?id=1">前往一班<a><br><a href="./index.html?id=2">前往二班<a>`);
+            }
+
+            window.addEventListener('DOMContentLoaded', function() {
+                var classId = getUrlParam('id');
+                if (!classId) {
+                    window.location.href = './404.html';
+                    return;
+                }
+                renderClass(classId);
+            });
+        </script>
+    </body>
+</html>
