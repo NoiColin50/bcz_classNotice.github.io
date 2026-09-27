@@ -52,7 +52,8 @@
             window.addEventListener('DOMContentLoaded', function() {
                 var classId = getUrlParam('id');
                 if (!classId) {
-                    window.location.href = './404.html';
+                    prompt("班级未找到，即将为你跳转至1班");
+                    window.location.href = './index.html?id=1';
                     return;
                 }
                 renderClass(classId);
