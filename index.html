@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>悦动工作室官方网站</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: #1a1a1a;
+        color: #e0e0e0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+
+      .loading-container {
+        text-align: center;
+        padding: 40px;
+      }
+
+      .loading-icon {
+        width: 255px;
+        height: 240px;
+        border-radius: 0px;
+        margin-bottom: 20px;
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+
+      .loading-text {
+        font-size: 22px;
+        opacity: 0.8;
+        animation: fadeInOut 1.5s ease-in-out infinite;
+      }
+
+      .lnk{
+        display:inline-block;
+        margin-top:30px;
+        padding:12px 32px;
+        font-size:16px;
+        color:#fff;
+        background:#1385ff;
+        border-radius:30px;
+        text-decoration:none;
+        transition:all 0.3s;
+        box-shadow:2px 4px 10px rgba(19,133,255,0.4);
+        cursor:pointer;
+      }
+      .lnk:hover{
+        background:#49a1ff;
+        transform:scale(1.05);
+        box-shadow:4px 8px 20px rgba(19,133,255,0.6)
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+
+        50% {
+          transform: scale(1.05);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInOut {
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+
+        50% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="loading-container">
+      <img src="./logo.webp" alt="一剑斩词震五岳" class="loading-icon" />
+      <p class="loading-text">一剑斩词震五岳<br>请选择小班</p>
+      <button id="classOne" class="lnk" onclick="window.location.href='main.html?id=1'">一班</button>
+      <br>
+      <button id="classTwo" class="lnk" onclick="window.location.href='main.html?id=2'">二班</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      
+    </script>
+  </body>
+</html>
