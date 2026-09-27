@@ -18,7 +18,7 @@
             function renderClass(id) {
                 var classData = data[id-1];
                 if(!classData){
-                    window.location.href="./404.html";
+                    $("body").append(`<h1>班级不存在</h1><p>有没有可能班级还没创建呢？</p><a href="./index.html?id=1">前往一班<a><br><a href="./index.html?id=2">前往二班<a>`);
                     return;
                 }
 
@@ -52,8 +52,7 @@
             window.addEventListener('DOMContentLoaded', function() {
                 var classId = getUrlParam('id');
                 if (!classId) {
-                    prompt("班级未找到，即将为你跳转至1班");
-                    window.location.href = './index.html?id=1';
+                    window.location.href = './404.html';
                     return;
                 }
                 renderClass(classId);
