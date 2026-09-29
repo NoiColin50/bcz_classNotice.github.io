@@ -19,7 +19,7 @@
                 var classData = data[id-1];
                 if(!classData){
                     $("title").append(` - 小班不存在`);
-                    $("body").append(`<h1>小班不存在</h1><p>有没有可能根本没有这个小班呢？</p>`);
+                    $("body").append(`<h1>小班不存在</h1><p>有没有可能根本没有这个小班呢？</p><button onclick="window.location.href='index.html'">切换班级</button>`);
                     return;
                 }
 
